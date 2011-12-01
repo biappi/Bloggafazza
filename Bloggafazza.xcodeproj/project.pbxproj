@@ -1,0 +1,233 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FE08C7114883B5700F7F786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE08C7014883B5700F7F786 /* Foundation.framework */; };
+		3FE08C7414883B5700F7F786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C7314883B5700F7F786 /* main.m */; };
+		3FE08C7814883B5700F7F786 /* Bloggafazza.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FE08C7714883B5700F7F786 /* Bloggafazza.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3FE08C6A14883B5700F7F786 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				3FE08C7814883B5700F7F786 /* Bloggafazza.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3FE08C6C14883B5700F7F786 /* Bloggafazza */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bloggafazza; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE08C7014883B5700F7F786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FE08C7314883B5700F7F786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FE08C7614883B5700F7F786 /* Bloggafazza-Prefix.pch */ = {isa = PBXFileReference; path = "Bloggafazza-Prefix.pch"; sourceTree = "<group>"; };
+		3FE08C7714883B5700F7F786 /* Bloggafazza.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Bloggafazza.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FE08C6914883B5700F7F786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE08C7114883B5700F7F786 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FE08C6114883B5700F7F786 = {
+			isa = PBXGroup;
+			children = (
+				3FE08C7214883B5700F7F786 /* Bloggafazza */,
+				3FE08C6F14883B5700F7F786 /* Frameworks */,
+				3FE08C6D14883B5700F7F786 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FE08C6D14883B5700F7F786 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FE08C6C14883B5700F7F786 /* Bloggafazza */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FE08C6F14883B5700F7F786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FE08C7014883B5700F7F786 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FE08C7214883B5700F7F786 /* Bloggafazza */ = {
+			isa = PBXGroup;
+			children = (
+				3FE08C7314883B5700F7F786 /* main.m */,
+				3FE08C7714883B5700F7F786 /* Bloggafazza.1 */,
+				3FE08C7514883B5700F7F786 /* Supporting Files */,
+			);
+			path = Bloggafazza;
+			sourceTree = "<group>";
+		};
+		3FE08C7514883B5700F7F786 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FE08C7614883B5700F7F786 /* Bloggafazza-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FE08C6B14883B5700F7F786 /* Bloggafazza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FE08C7B14883B5700F7F786 /* Build configuration list for PBXNativeTarget "Bloggafazza" */;
+			buildPhases = (
+				3FE08C6814883B5700F7F786 /* Sources */,
+				3FE08C6914883B5700F7F786 /* Frameworks */,
+				3FE08C6A14883B5700F7F786 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bloggafazza;
+			productName = Bloggafazza;
+			productReference = 3FE08C6C14883B5700F7F786 /* Bloggafazza */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FE08C6314883B5700F7F786 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3FE08C6614883B5700F7F786 /* Build configuration list for PBXProject "Bloggafazza" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3FE08C6114883B5700F7F786;
+			productRefGroup = 3FE08C6D14883B5700F7F786 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FE08C6B14883B5700F7F786 /* Bloggafazza */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FE08C6814883B5700F7F786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE08C7414883B5700F7F786 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3FE08C7914883B5700F7F786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3FE08C7A14883B5700F7F786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3FE08C7C14883B5700F7F786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bloggafazza/Bloggafazza-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3FE08C7D14883B5700F7F786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bloggafazza/Bloggafazza-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FE08C6614883B5700F7F786 /* Build configuration list for PBXProject "Bloggafazza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FE08C7914883B5700F7F786 /* Debug */,
+				3FE08C7A14883B5700F7F786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FE08C7B14883B5700F7F786 /* Build configuration list for PBXNativeTarget "Bloggafazza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FE08C7C14883B5700F7F786 /* Debug */,
+				3FE08C7D14883B5700F7F786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FE08C6314883B5700F7F786 /* Project object */;
+}
