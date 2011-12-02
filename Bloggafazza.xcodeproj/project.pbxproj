@@ -17,18 +17,6 @@
 		3FE08C9A14885AD900F7F786 /* BFTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C9914885AD900F7F786 /* BFTemplate.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3FE08C6A14883B5700F7F786 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3FE08C6C14883B5700F7F786 /* Bloggafazza */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bloggafazza; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE08C7014883B5700F7F786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,7 +32,7 @@
 		3FE08C9314884A6100F7F786 /* BFEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEntry.m; sourceTree = "<group>"; };
 		3FE08C951488580800F7F786 /* BFSiteBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSiteBuilder.h; sourceTree = "<group>"; };
 		3FE08C961488580800F7F786 /* BFSiteBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSiteBuilder.m; sourceTree = "<group>"; };
-		3FE08C9814885AD900F7F786 /* BFTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BFTemplate.h; sourceTree = "<group>"; };
+		3FE08C9814885AD900F7F786 /* BFTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFTemplate.h; sourceTree = "<group>"; };
 		3FE08C9914885AD900F7F786 /* BFTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTemplate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +111,6 @@
 			buildPhases = (
 				3FE08C6814883B5700F7F786 /* Sources */,
 				3FE08C6914883B5700F7F786 /* Frameworks */,
-				3FE08C6A14883B5700F7F786 /* CopyFiles */,
 			);
 			buildRules = (
 			);
