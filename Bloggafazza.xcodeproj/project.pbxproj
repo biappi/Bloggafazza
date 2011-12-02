@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		3FE08C7114883B5700F7F786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE08C7014883B5700F7F786 /* Foundation.framework */; };
 		3FE08C7414883B5700F7F786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C7314883B5700F7F786 /* main.m */; };
-		3FE08C7814883B5700F7F786 /* Bloggafazza.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FE08C7714883B5700F7F786 /* Bloggafazza.1 */; };
+		3FE08C8014883C5100F7F786 /* BFSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C7F14883C5100F7F786 /* BFSettings.m */; };
+		3FE08C8B148842FD00F7F786 /* BFEntriesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C8A148842FD00F7F786 /* BFEntriesCollection.m */; };
+		3FE08C911488477A00F7F786 /* BFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C901488477A00F7F786 /* BFAdditions.m */; };
+		3FE08C9414884A6100F7F786 /* BFEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C9314884A6100F7F786 /* BFEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,7 +22,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				3FE08C7814883B5700F7F786 /* Bloggafazza.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -29,8 +31,15 @@
 		3FE08C6C14883B5700F7F786 /* Bloggafazza */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bloggafazza; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE08C7014883B5700F7F786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FE08C7314883B5700F7F786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3FE08C7614883B5700F7F786 /* Bloggafazza-Prefix.pch */ = {isa = PBXFileReference; path = "Bloggafazza-Prefix.pch"; sourceTree = "<group>"; };
-		3FE08C7714883B5700F7F786 /* Bloggafazza.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Bloggafazza.1; sourceTree = "<group>"; };
+		3FE08C7614883B5700F7F786 /* Bloggafazza-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bloggafazza-Prefix.pch"; sourceTree = "<group>"; };
+		3FE08C7E14883C5100F7F786 /* BFSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSettings.h; sourceTree = "<group>"; };
+		3FE08C7F14883C5100F7F786 /* BFSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSettings.m; sourceTree = "<group>"; };
+		3FE08C89148842FD00F7F786 /* BFEntriesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFEntriesCollection.h; sourceTree = "<group>"; };
+		3FE08C8A148842FD00F7F786 /* BFEntriesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEntriesCollection.m; sourceTree = "<group>"; };
+		3FE08C8F1488477A00F7F786 /* BFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFAdditions.h; sourceTree = "<group>"; };
+		3FE08C901488477A00F7F786 /* BFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFAdditions.m; sourceTree = "<group>"; };
+		3FE08C9214884A6100F7F786 /* BFEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFEntry.h; sourceTree = "<group>"; };
+		3FE08C9314884A6100F7F786 /* BFEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +82,26 @@
 		3FE08C7214883B5700F7F786 /* Bloggafazza */ = {
 			isa = PBXGroup;
 			children = (
+				3FE08C7514883B5700F7F786 /* Boilerplate */,
 				3FE08C7314883B5700F7F786 /* main.m */,
-				3FE08C7714883B5700F7F786 /* Bloggafazza.1 */,
-				3FE08C7514883B5700F7F786 /* Supporting Files */,
+				3FE08C7E14883C5100F7F786 /* BFSettings.h */,
+				3FE08C7F14883C5100F7F786 /* BFSettings.m */,
+				3FE08C89148842FD00F7F786 /* BFEntriesCollection.h */,
+				3FE08C8A148842FD00F7F786 /* BFEntriesCollection.m */,
+				3FE08C9214884A6100F7F786 /* BFEntry.h */,
+				3FE08C9314884A6100F7F786 /* BFEntry.m */,
+				3FE08C8F1488477A00F7F786 /* BFAdditions.h */,
+				3FE08C901488477A00F7F786 /* BFAdditions.m */,
 			);
 			path = Bloggafazza;
 			sourceTree = "<group>";
 		};
-		3FE08C7514883B5700F7F786 /* Supporting Files */ = {
+		3FE08C7514883B5700F7F786 /* Boilerplate */ = {
 			isa = PBXGroup;
 			children = (
 				3FE08C7614883B5700F7F786 /* Bloggafazza-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			name = Boilerplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE08C7414883B5700F7F786 /* main.m in Sources */,
+				3FE08C8014883C5100F7F786 /* BFSettings.m in Sources */,
+				3FE08C8B148842FD00F7F786 /* BFEntriesCollection.m in Sources */,
+				3FE08C911488477A00F7F786 /* BFAdditions.m in Sources */,
+				3FE08C9414884A6100F7F786 /* BFEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +246,7 @@
 				3FE08C7D14883B5700F7F786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
