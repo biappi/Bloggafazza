@@ -10,7 +10,9 @@
 
 @interface BFSettings : NSObject
 
-@property(nonatomic, retain) NSString * dataDirectoryPath;
+@property(nonatomic, strong) NSString * dataDirectoryPath;
+@property(nonatomic, strong) NSString * outputDirectoryPath;
+@property(nonatomic, strong) NSString * templateDirectoryPath;
 
 + (BFSettings *)settings;
 

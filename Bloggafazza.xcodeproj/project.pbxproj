@@ -13,6 +13,8 @@
 		3FE08C8B148842FD00F7F786 /* BFEntriesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C8A148842FD00F7F786 /* BFEntriesCollection.m */; };
 		3FE08C911488477A00F7F786 /* BFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C901488477A00F7F786 /* BFAdditions.m */; };
 		3FE08C9414884A6100F7F786 /* BFEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C9314884A6100F7F786 /* BFEntry.m */; };
+		3FE08C971488580800F7F786 /* BFSiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C961488580800F7F786 /* BFSiteBuilder.m */; };
+		3FE08C9A14885AD900F7F786 /* BFTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE08C9914885AD900F7F786 /* BFTemplate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,10 @@
 		3FE08C901488477A00F7F786 /* BFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFAdditions.m; sourceTree = "<group>"; };
 		3FE08C9214884A6100F7F786 /* BFEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFEntry.h; sourceTree = "<group>"; };
 		3FE08C9314884A6100F7F786 /* BFEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEntry.m; sourceTree = "<group>"; };
+		3FE08C951488580800F7F786 /* BFSiteBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSiteBuilder.h; sourceTree = "<group>"; };
+		3FE08C961488580800F7F786 /* BFSiteBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSiteBuilder.m; sourceTree = "<group>"; };
+		3FE08C9814885AD900F7F786 /* BFTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BFTemplate.h; sourceTree = "<group>"; };
+		3FE08C9914885AD900F7F786 /* BFTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFTemplate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,10 @@
 				3FE08C9314884A6100F7F786 /* BFEntry.m */,
 				3FE08C8F1488477A00F7F786 /* BFAdditions.h */,
 				3FE08C901488477A00F7F786 /* BFAdditions.m */,
+				3FE08C951488580800F7F786 /* BFSiteBuilder.h */,
+				3FE08C961488580800F7F786 /* BFSiteBuilder.m */,
+				3FE08C9814885AD900F7F786 /* BFTemplate.h */,
+				3FE08C9914885AD900F7F786 /* BFTemplate.m */,
 			);
 			path = Bloggafazza;
 			sourceTree = "<group>";
@@ -156,6 +166,8 @@
 				3FE08C8B148842FD00F7F786 /* BFEntriesCollection.m in Sources */,
 				3FE08C911488477A00F7F786 /* BFAdditions.m in Sources */,
 				3FE08C9414884A6100F7F786 /* BFEntry.m in Sources */,
+				3FE08C971488580800F7F786 /* BFSiteBuilder.m in Sources */,
+				3FE08C9A14885AD900F7F786 /* BFTemplate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

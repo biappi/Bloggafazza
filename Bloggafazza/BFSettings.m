@@ -30,4 +30,24 @@
   [[NSUserDefaults standardUserDefaults] setObject:dataDirectoryPath forKey:@"DataDirectory"];
 }
 
+- (NSString *)outputDirectoryPath;
+{
+  return [[NSUserDefaults standardUserDefaults] stringForKey:@"OutputDirectory"];
+}
+
+- (void)setOutputDirectoryPath:(NSString *)outputDirectoryPath;
+{
+  [[NSUserDefaults standardUserDefaults] setObject:outputDirectoryPath forKey:@"OutputDirectory"];
+}
+
+- (NSString *)templateDirectoryPath;
+{
+  return [[NSUserDefaults standardUserDefaults] stringForKey:@"TemplateDirectory"];
+}
+
+- (void)setTemplateDirectoryPath:(NSString *)templateDirectoryPath;
+{
+  [[NSUserDefaults standardUserDefaults] setObject:templateDirectoryPath forKey:@"TemplateDirectory"];
+}
+
 @end

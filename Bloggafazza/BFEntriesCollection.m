@@ -50,6 +50,9 @@
                     
                     return entry;
                   }];
+  
+  zelf.entries = [zelf.entries sortedArrayUsingComparator:^(BFEntry * o1, BFEntry * o2) { return [o1.date compare:o2.date]; }];
+  
   return zelf;
 }
 

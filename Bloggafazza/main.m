@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BFSettings.h"
 #import "BFEntriesCollection.h"
+#import "BFTemplate.h"
+#import "BFSiteBuilder.h"
 
 int main (int argc, const char * argv[])
 {
@@ -30,7 +32,36 @@ int main (int argc, const char * argv[])
       return 1;
     }
     
-    NSLog(@"%@", collection);
+    NSString * templatePath = [BFSettings settings].templateDirectoryPath;
+    if (templatePath == nil)
+    {
+      NSLog(@"TemplateDirectory not set - The directory with the template files");
+      return 1;
+    }
+    
+    BFTemplate * template = [BFTemplate templateFromDirectory:templatePath error:&error];
+    
+    if (template == nil)
+    {
+      NSLog(@"%@", [error localizedDescription]);
+      return 1;
+    }
+    
+    NSString * outputPath = [BFSettings settings].outputDirectoryPath;
+    if (outputPath == nil)
+    {
+      NSLog(@"OutputDirectory not set - The directory in which to store the output");
+      return 1;
+    }
+    
+    BFSiteBuilder * siteBuilder = [BFSiteBuilder siteBuilderWithOutputDir:outputPath entriesSubdir:@"entries" template:template];
+    BOOL success = [siteBuilder renderEntryCollection:collection error:&error];
+    
+    if (success == NO)
+    {
+      NSLog(@"%@", [error localizedDescription]);
+      return 1;
+    }
   }
   
   return 0;
