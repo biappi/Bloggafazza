@@ -54,6 +54,27 @@ int main (int argc, const char * argv[])
       return 1;
     }
     
+    NSString * resourcesPath = [BFSettings settings].resourcesDirectoryPath;
+    if (resourcesPath != nil)
+    {
+      for (NSString * file in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:resourcesPath error:nil])
+      {
+        NSError  * err;
+        NSString * src = [resourcesPath stringByAppendingPathComponent:file];
+        NSString * dst = [outputPath stringByAppendingPathComponent:file];
+        
+        if (![[NSFileManager defaultManager] removeItemAtPath:dst error:&err])
+          NSLog(@"%@", [err localizedDescription]);
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:src
+                                                     toPath:dst
+                                                      error:&err])
+        {
+          NSLog(@"%@", [err localizedDescription]);
+        }
+      }
+    }
+    
     BFSiteBuilder * siteBuilder = [BFSiteBuilder siteBuilderWithOutputDir:outputPath entriesSubdir:@"entries" template:template];
     BOOL success = [siteBuilder renderEntryCollection:collection error:&error];
     

@@ -50,4 +50,14 @@
   [[NSUserDefaults standardUserDefaults] setObject:templateDirectoryPath forKey:@"TemplateDirectory"];
 }
 
+- (NSString *)resourcesDirectoryPath;
+{
+  return [[NSUserDefaults standardUserDefaults] stringForKey:@"ResourcesDirectory"];
+}
+
+- (void)setResourcesDirectoryPath:(NSString *)resourcesDirectoryPath
+{
+  [[NSUserDefaults standardUserDefaults] setObject:resourcesDirectoryPath forKey:@"ResourcesDirectory"];
+}
+
 @end

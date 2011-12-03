@@ -13,7 +13,7 @@
 
 + (BFTemplate *)templateFromDirectory:(NSString *)directory error:(NSError **)error;
 
-- (NSString *)renderEntry:(BFEntry *)entry;
+- (NSString *)renderEntry:(BFEntry *)entry additionalSubstitutions:(NSDictionary *)subs;
 - (NSString *)renderPage:(NSString *)content;
 
 @end

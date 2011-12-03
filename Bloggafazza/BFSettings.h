@@ -13,6 +13,7 @@
 @property(nonatomic, strong) NSString * dataDirectoryPath;
 @property(nonatomic, strong) NSString * outputDirectoryPath;
 @property(nonatomic, strong) NSString * templateDirectoryPath;
+@property(nonatomic, strong) NSString * resourcesDirectoryPath;
 
 + (BFSettings *)settings;
 

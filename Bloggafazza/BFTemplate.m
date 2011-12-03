@@ -50,7 +50,7 @@
   return template;
 }
 
-- (NSString *)renderEntry:(BFEntry *)entry;
+- (NSString *)renderEntry:(BFEntry *)entry additionalSubstitutions:(NSDictionary *)subs;
 {
   NSString * date = [NSDateFormatter localizedStringFromDate:entry.date
                                                    dateStyle:NSDateFormatterMediumStyle
@@ -61,6 +61,11 @@
   rendered = [rendered stringByReplacingOccurrencesOfString:@"{{SLUG}}" withString:entry.slug];
   rendered = [rendered stringByReplacingOccurrencesOfString:@"{{BODY}}" withString:entry.body];
   rendered = [rendered stringByReplacingOccurrencesOfString:@"{{DATE}}" withString:date];
+  
+  for (NSString * key in subs)
+    rendered = [rendered stringByReplacingOccurrencesOfString:key
+                                                   withString:[subs objectForKey:key]];
+  
   return rendered;
 }
 

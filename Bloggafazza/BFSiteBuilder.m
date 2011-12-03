@@ -16,6 +16,7 @@
 @property(nonatomic, strong) BFTemplate * template;
 
 - (NSString *)renderEntry:(BFEntry *)entry error:(NSError **)error;
+- (NSDictionary *)additionalSubstitutionForEntry:(BFEntry *)entry;
 
 @end
 
@@ -73,7 +74,7 @@
 - (NSString *)renderEntry:(BFEntry *)entry error:(NSError **)error;
 {
   NSError  * fileError;
-  NSString * entryString   = [self.template renderEntry:entry];
+  NSString * entryString   = [self.template renderEntry:entry additionalSubstitutions:[self additionalSubstitutionForEntry:entry]];
   NSString * entryPage     = [self.template renderPage:entryString];
   NSString * entryDir      = [self.outputDir stringByAppendingPathComponent:self.entriesSubdir];
   NSString * entryFileName = [entry.slug stringByAppendingPathExtension:@"html"];
@@ -92,6 +93,14 @@
   }
   
   return entryString;
+}
+
+- (NSDictionary *)additionalSubstitutionForEntry:(BFEntry *)entry;
+{
+  NSString * entryFileName = [entry.slug stringByAppendingPathExtension:@"html"];
+  NSString * entryFilePath = [self.entriesSubdir stringByAppendingPathComponent:entryFileName];
+  NSString * permalink     = [@"/" stringByAppendingPathComponent:entryFilePath];
+  return [NSDictionary dictionaryWithObject:permalink forKey:@"{{PERMALINK}}"];
 }
 
 @end
