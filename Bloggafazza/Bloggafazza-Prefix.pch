@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'Bloggafazza' target in the 'Bloggafazza' project
-//
-
-#ifdef __OBJC__
-  #import <Foundation/Foundation.h>
-#endif
