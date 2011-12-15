@@ -1,8 +1,9 @@
 from datetime import date
 
 import os
+import errno
 
-class FileLayoutError (exception.Exception) : pass
+class FileLayoutError (Exception) : pass
 
 class Entry:
 	def __init__(self, title, slug, date, body):
@@ -15,17 +16,16 @@ class Entry:
 	def create_from_path(cls, path):
 		import os.path
 		
-		title, slug, date, body = None
-		
+		title = slug = the_date = body = None
 		filename = os.path.splitext(os.path.basename(path))[0]
 		
 		try:
-			datestring, self.slug = filename.split('--', 1)
+			datestring, slug = filename.split('--', 1)
 			year, month, day = datestring.split('-')
 			year = int(year)
 			month = int(month)
 			day = int(day)
-			date = date(year, month, day)
+			the_date = date(year, month, day)
 		except ValueError:
 			raise FileLayoutError("Filename not correct for entry at path '%s'" %
 			                      path)
@@ -33,7 +33,7 @@ class Entry:
 		entry = open(path, 'r').read()
 		title, body = entry.split('\n', 1)
 		
-		return cls(title, slug, date, body)
+		return cls(title, slug, the_date, body)
 		
 class EntriesCollection:
 	def __init__(self, entries=[]):
@@ -49,14 +49,66 @@ class EntriesCollection:
 			path = os.path.join(dir, filename)
 			
 			try: entries.append(Entry.create_from_path(path))
-			except: pass
+			except FileLayoutError: pass
 		
 		return cls(entries)
 
+class Template:
+	def __init__(self):
+		self.pageFormat = ''
+		self.entryFormat = ''
+	
+	@classmethod
+	def create_from_directory(cls, dir):
+		t = cls()
+		t.pageFormat = open(os.path.join(dir, 'pageFormat'), 'r').read()
+		t.entryFormat = open(os.path.join(dir, 'entryFormat'), 'r').read()
+		return t
+	
+	def render_entry(self, entry, substitutions={}):
+		substitutions['TITLE'] = entry.title
+		substitutions['SLUG'] = entry.slug
+		substitutions['BODY'] = entry.body
+		substitutions['DATE'] = entry.date
+		
+		rendered = self.entryFormat
+		
+		for k in substitutions:
+			rendered = rendered.replace('{{%s}}' % k, str(substitutions[k]))
+		
+		return rendered
+	
+	def render_page(self, content):
+		return self.entryFormat.replace('{{CONTENT}}', content)
+
+class SiteBuilder:
+	def __init__(self, output_dir, entries_dir, template):
+		self.output_dir = output_dir
+		self.entries_dir = entries_dir
+		self.template = template
+			
+	def render_entry(self, entry):
+		entry_filename = '%s.html' % entry.slug
+		entry_path = os.path.join(self.entries_dir, entry_filename)
+		entry_perma = '/%s' % entry_path
+		
+		extra = {'PERMALINK': entry_perma}
+		entry_string = self.template.render_entry(entry, extra)
+		write_to_file_in_dir(entry_string, entry_path)
+		
+		return entry_string
+	
+	def render_entry_collection(self, collection):
+		rendered = [self.render_entry(entry) for entry in collection.entries]
+		index = '\n'.join(rendered)
+		path = os.path.join(self.output_dir, self.entries_dir)
+		path = os.path.join(path, 'index.html')
+		write_to_file_in_dir(index, path)
+
+		
 def prepare_output_directory(config):
 	import shutil
-	import errno
-
+	
 	try:
 		shutil.rmtree(config.OutputDirectory)
 	except OSError as e:
@@ -67,6 +119,16 @@ def prepare_output_directory(config):
 		shutil.copytree(config.ResourcesDirectory, config.OutputDirectory)
 	else:
 		os.mkdir(config.OutputDirectory)
+
+def write_to_file_in_dir(what, path):
+	try:
+		open(path, 'w').write(what)
+	except IOError as e:
+		if e.errno == errno.ENOENT:
+			os.makedirs(os.path.dirname(path))
+			open(path, 'w').write(what)
+		else:
+			pass
 
 def parse_cmdline():
 	import argparse
@@ -85,4 +147,9 @@ def parse_cmdline():
 
 if __name__ == '__main__':
 	config = parse_cmdline()
+	template = Template.create_from_directory(config.TemplateDirectory)
+	entries = EntriesCollection.create_from_directory(config.DataDirectory)
+	builder = SiteBuilder(config.OutputDirectory, 'entries', template)
+	
 	prepare_output_directory(config)
+	builder.render_entry_collection(entries)
