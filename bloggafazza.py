@@ -79,7 +79,7 @@ class Template:
 		return rendered
 	
 	def render_page(self, content):
-		return self.entryFormat.replace('{{CONTENT}}', content)
+		return self.pageFormat.replace('{{CONTENT}}', content)
 
 class SiteBuilder:
 	def __init__(self, output_dir, entries_dir, template):
@@ -94,15 +94,16 @@ class SiteBuilder:
 		
 		extra = {'PERMALINK': entry_perma}
 		entry_string = self.template.render_entry(entry, extra)
+		
+		entry_path = os.path.join(self.output_dir, entry_path)
 		write_to_file_in_dir(entry_string, entry_path)
 		
 		return entry_string
 	
 	def render_entry_collection(self, collection):
 		rendered = [self.render_entry(entry) for entry in collection.entries]
-		index = '\n'.join(rendered)
-		path = os.path.join(self.output_dir, self.entries_dir)
-		path = os.path.join(path, 'index.html')
+		index = self.template.render_page('\n'.join(rendered))
+		path = os.path.join(self.output_dir, 'index.html')
 		write_to_file_in_dir(index, path)
 
 		
