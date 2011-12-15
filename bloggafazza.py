@@ -109,17 +109,26 @@ class SiteBuilder:
 		
 def prepare_output_directory(config):
 	import shutil
+	import sys
+	
+	dir = config.OutputDirectory
+	if dir[-1] == '/': dir = dir[:-1]
+	
+	if os.path.exists(dir) and config.ForceDeletion == False:
+		print "Output directory already exists, you can use --ForceDeletion!"
+		sys.exit(-1)
 	
 	try:
-		shutil.rmtree(config.OutputDirectory)
+		shutil.rmtree(dir)
 	except OSError as e:
-		if e.errno == errno.ENOENT: pass
+		if   e.errno == errno.ENOENT:  pass
+		elif e.errno == errno.ENOTDIR: os.remove(dir)
 		else: raise
 	
 	if config.ResourcesDirectory:
-		shutil.copytree(config.ResourcesDirectory, config.OutputDirectory)
+		shutil.copytree(config.ResourcesDirectory, dir)
 	else:
-		os.mkdir(config.OutputDirectory)
+		os.mkdir(dir)
 
 def write_to_file_in_dir(what, path):
 	try:
@@ -135,6 +144,8 @@ def parse_cmdline():
 	import argparse
 	
 	parser = argparse.ArgumentParser(description='Static blog baker.')
+	parser.add_argument('-f', '--ForceDeletion', action='store_true',
+	                    help='Force the deletion of OutputDir')
 	parser.add_argument('-d', '--DataDirectory', required=True,
 	                    help='The directory with the entries')
 	parser.add_argument('-t', '--TemplateDirectory', required=True,
