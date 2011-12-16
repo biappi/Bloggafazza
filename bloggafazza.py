@@ -94,9 +94,10 @@ class SiteBuilder:
 		
 		extra = {'PERMALINK': entry_perma}
 		entry_string = self.template.render_entry(entry, extra)
+		entry_page = self.template.render_page(entry_string)
 		
 		entry_path = os.path.join(self.output_dir, entry_path)
-		write_to_file_in_dir(entry_string, entry_path)
+		write_to_file_in_dir(entry_page, entry_path)
 		
 		return entry_string
 	
