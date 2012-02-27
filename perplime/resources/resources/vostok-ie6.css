@@ -1,0 +1,5 @@
+#wrapper{width:600px;}
+.post,
+.comment,
+.post blockquote{height:1%;}
+.entry ul{list-style:none outside;height:1%;}

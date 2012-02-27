@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>mi.perpli.me</title>
+		
+		<link rel="stylesheet" type="text/css" href="resources/vostok.css" />
+		<link rel="stylesheet" type="text/css" media="print" href="resources/vostok-print.css" />
+		
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/0vccnsa/fmHl92g3t/vostok-ie7.css" />
+		<![endif]-->
+		
+		<!--[if IE 6]>
+			<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/0vccnsa/ekOl92g37/vostok-ie6.css" />
+		<![endif]-->
+		
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="header">
+			<h1><a href="#" title="/">mi.perpli.me</a></h1>
+			<p class="description">immagini maschie col fischio</p>
+		</div>
+		
+		<div id="content">
+			<div id="main-content">
+				
+				{{CONTENT}}
+				
+				<div class="pagination clearfix">
+				<!--
+					<div class="next"><a href="#" title="/page/2">More recent articles &rarr;</a></div>
+					<div class="prev"><a href="#" title="/page/2">More old articles &rarr;</a></div>
+				-->
+				</div>
+				
+				<div id="sidebar" class="clearfix">
+					<div id="sb-1">
+					</div>
+					
+					<div id="sb-2">
+					<!--
+						<form method="get" action="/search" name="search-form" id="search-form" >
+							<p>
+								<label for="s">Search:</label>
+								<input type="text" value="" name="q" id="s" class="input-text" />
+								<input name="submit" type="submit" id="submit" value="Search" />
+							</p>
+						</form>
+						
+						<ul id="rss">
+							<li><a href="#" title="http://demo.tumblr.com/rss">RSS Feed of the articles</a></li>
+						</ul>
+						
+						<a class="email" href="/ask">Ask me something</a>
+					-->
+					</div>
+				</div>
+			</div>
+				
+			<div id="footer">
+				<p>mi.perpli.me is powered by RobeGanze and <a href="#" title="http://www.vostoktheme.com" hreflang="en">Vostok Theme</a></p>
+			</div>
+		</div>
+	</body>
+</html>

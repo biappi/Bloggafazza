@@ -1,0 +1,8 @@
+<div class="post" id="post-{{SLUG}}">
+	<h2>{{TITLE}}</h2>
+	<span class="date">{{DATE}}</span>
+	<div class="entry">
+		{{BODY}}
+	</div>            
+	<!-- <span class="number-of-comments">12,141 notes</span> -->
+</div>
