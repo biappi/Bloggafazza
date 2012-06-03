@@ -1,5 +1,5 @@
 <div class="post" id="post-{{SLUG}}">
-	<h2>{{TITLE}}</h2>
+	<h2><a href="{{PERMALINK}}">{{TITLE}}</a></h2>
 	<span class="date">{{DATE}}</span>
 	<div class="entry">
 		{{BODY}}

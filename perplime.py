@@ -42,8 +42,8 @@ def parse_cmdline():
 	                    default='resources/images',
 	                    help='Where to store the images')
 	parser.add_argument('-I', '--images-url',
-	                    default='images',
-	                    help='The images directory relative url')
+	                    default='/images',
+	                    help='The images directory absolute url')
 	parser.add_argument('-e', '--entries-directory',
 	                    default='entries',
 	                    help='Where to store the entry file')
