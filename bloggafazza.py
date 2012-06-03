@@ -101,7 +101,9 @@ class SiteBuilder:
 		return entry_string
 	
 	def render_entry_collection(self, collection):
-		rendered = [self.render_entry(entry) for entry in collection.entries]
+		entries = list(collection.entries)
+		entries.reverse()
+		rendered = [self.render_entry(entry) for entry in entries]
 		index = self.template.render_page('\n'.join(rendered))
 		path = os.path.join(self.output_dir, 'index.html')
 		write_to_file_in_dir(index, path)
